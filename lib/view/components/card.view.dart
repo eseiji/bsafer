@@ -1,12 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeCard extends StatelessWidget {
-  const HomeCard(
-      {Key? key,
-      required this.title,
-      required this.nExercises,
-      required this.description})
-      : super(key: key);
+  const HomeCard({
+    Key? key,
+    required this.title,
+    required this.nExercises,
+    required this.description,
+  }) : super(key: key);
 
   final String title;
   final int nExercises;
@@ -90,24 +91,42 @@ class HomeCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      children: const [
-                        Icon(
-                          Icons.circle_notifications_rounded,
-                          color: Colors.white,
-                        ),
-                        SizedBox(width: 10),
-                        Text(
-                          'Acessar código fonte',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+                      children: [
+                        TextButton(
+                          onPressed: () => {},
+                          style: ButtonStyle(
+                            padding: MaterialStateProperty.all<EdgeInsets>(
+                              EdgeInsets.zero,
+                            ),
+                          ),
+                          child: Row(
+                            children: const [
+                              Icon(
+                                Icons.circle_notifications_rounded,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                'Acessar código fonte',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
                     TextButton(
-                      onPressed: () => {},
+                      onPressed: () =>
+                          Navigator.of(context).pushNamed('/mockup-reading'),
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+                          EdgeInsets.zero,
+                        ),
+                      ),
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(

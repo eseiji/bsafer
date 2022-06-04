@@ -1,5 +1,6 @@
 import 'package:bsafer/view/activities.view.dart';
-import 'package:bsafer/view/components/app_bar.view.dart';
+// import 'package:bsafer/view/components/app_bar.view.dart';
+import 'package:bsafer/view/mockup_reading.view.dart';
 // import 'package:bsafer/view/components/bottom_nav_bar.view.dart';
 // import 'package:bsafer/view/components/bottom_nav_bar.view2.dart';
 import 'package:bsafer/view/repositories.view.dart';
@@ -17,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
   List<Widget> data = [
     const ActivitiesView(),
     const RepositoriesView(),
-    const RepositoriesView(),
+    const MockupReadingView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,7 @@ class _HomeViewState extends State<HomeView> {
         tabBuilder: (context, index) {
           return CupertinoTabView(
             builder: (context) {
+              print('passou');
               return data[index];
             },
           );

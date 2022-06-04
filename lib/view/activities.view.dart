@@ -16,7 +16,7 @@ class _ActivitiesViewState extends State<ActivitiesView> {
     return Scaffold(
       appBar: homeAppBar('Atividades'),
       body: const ActivitiesBody(),
-      // bottomNavigationBar: const BottomNavBar(),
+      // bottomNavigationBar: Container(),
     );
   }
 }

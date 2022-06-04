@@ -11,15 +11,16 @@ AppBar homeAppBar(String title) {
         Text(
           title,
           style: const TextStyle(
-            fontSize: 15,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(height: 3),
-        const Text(
+        Text(
           'Flutterando MasterClass',
           style: TextStyle(
-            fontSize: 10,
+            color: Colors.white.withOpacity(0.7),
+            fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
         ),

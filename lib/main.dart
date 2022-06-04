@@ -1,4 +1,6 @@
 import 'package:bsafer/view/home.view.dart';
+import 'package:bsafer/view/home_test.view.dart';
+import 'package:bsafer/view/mockup_reading.view.dart';
 import 'package:bsafer/view/repositories.view.dart';
 import 'package:flutter/material.dart';
 
@@ -20,10 +22,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomeView(),
+      home: const HomeTest(),
       routes: {
         '/home': (context) => const HomeView(),
-        '/repositories': (context) => RepositoriesView(),
+        '/repositories': (context) => const RepositoriesView(),
+        '/mockup-reading': (context) => const MockupReadingView(),
+        '/home-test': (context) => const HomeTest(),
       },
     );
   }
