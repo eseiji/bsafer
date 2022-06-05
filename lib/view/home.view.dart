@@ -1,10 +1,8 @@
+import 'package:bsafer/view/about.view.dart';
 import 'package:bsafer/view/activities.view.dart';
-// import 'package:bsafer/view/components/app_bar.view.dart';
-import 'package:bsafer/view/mockup_reading.view.dart';
-// import 'package:bsafer/view/components/bottom_nav_bar.view.dart';
-// import 'package:bsafer/view/components/bottom_nav_bar.view2.dart';
 import 'package:bsafer/view/repositories.view.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -15,43 +13,82 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  List<Widget> data = [
-    const ActivitiesView(),
-    const RepositoriesView(),
-    const MockupReadingView(),
-  ];
+  int _currentPage = 0;
+  late PageController _pageController;
+
+  // void _onItemSelected(int index) {
+  //   // print(index);
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  //   if (index == 1) {
+  //     Navigator.of(context).pushNamed('/repositories');
+  //   }
+  // }
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentPage);
+  }
+
+  _setCurrentPage(page) {
+    setState(() {
+      _currentPage = page;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(
-          backgroundColor: const Color(0xff121517),
-          // backgroundColor: CupertinoColors.white,
-          activeColor: Colors.blueAccent,
-          inactiveColor: Colors.white,
+    return Scaffold(
+      body: PageView(
+        controller: _pageController,
+        children: const [
+          ActivitiesView(),
+          RepositoriesView(),
+          AboutView(),
+        ],
+        onPageChanged: _setCurrentPage,
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Color(0xff121517),
+        ),
+        child: BottomNavigationBar(
+          onTap: (page) {
+            _pageController.animateToPage(
+              page,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.ease,
+            );
+          },
+          currentIndex: _currentPage,
+          backgroundColor: Colors.transparent,
+          selectedItemColor: Colors.blueAccent,
+          unselectedItemColor: Colors.white,
+          selectedLabelStyle: const TextStyle(
+            color: Colors.blueAccent,
+            fontWeight: FontWeight.bold,
+          ),
+          unselectedLabelStyle: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.normal,
+          ),
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.receipt_long_rounded),
-              label: "Atividades",
+              label: 'Atividades',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.badge_rounded),
-              label: "Repositórios",
+              label: 'Repositórios',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: "Sobre o dev",
-            )
+              label: 'Sobre o dev',
+            ),
           ],
         ),
-        tabBuilder: (context, index) {
-          return CupertinoTabView(
-            builder: (context) {
-              print('passou');
-              return data[index];
-            },
-          );
-        },
       ),
     );
   }

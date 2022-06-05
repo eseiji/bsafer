@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/card.view.dart';
+import 'package:bsafer/view/components/home_card.dart';
 import 'package:flutter/material.dart';
 
 class ActivitiesBody extends StatelessWidget {
@@ -10,7 +10,7 @@ class ActivitiesBody extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: const BoxDecoration(
               color: Color(0xff121517),
             ),

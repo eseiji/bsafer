@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-AppBar homeAppBar(String title) {
+AppBar appBar(String title) {
   return AppBar(
     backgroundColor: const Color(0xff121517),
     automaticallyImplyLeading: true,

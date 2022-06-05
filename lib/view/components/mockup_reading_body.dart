@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/mockup_card.view.dart';
+import 'package:bsafer/view/components/shared_card.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +26,11 @@ class _MockupReadingBodyState extends State<MockupReadingBody> {
               child: Column(
                 children: const [
                   SizedBox(height: 5),
-                  MockupCard(title: 'Money Page', index: 1),
+                  SharedCard(title: 'Money Page', index: 1),
                   SizedBox(height: 15),
-                  MockupCard(title: 'Tinder++', index: 2),
+                  SharedCard(title: 'Tinder++', index: 2),
                   SizedBox(height: 15),
-                  MockupCard(title: 'Facebook', index: 3),
+                  SharedCard(title: 'Facebook', index: 3),
                 ],
               ),
             ),

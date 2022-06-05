@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MockupCard extends StatelessWidget {
-  const MockupCard({Key? key, required this.title, required this.index})
+class SharedCard extends StatelessWidget {
+  const SharedCard({Key? key, required this.title, required this.index})
       : super(key: key);
 
   final String title;
