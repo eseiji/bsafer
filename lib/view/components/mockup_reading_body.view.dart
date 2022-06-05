@@ -26,11 +26,11 @@ class _MockupReadingBodyState extends State<MockupReadingBody> {
               child: Column(
                 children: const [
                   SizedBox(height: 5),
-                  MockupCard(title: 'Money Page'),
+                  MockupCard(title: 'Money Page', index: 1),
                   SizedBox(height: 15),
-                  MockupCard(title: 'Tinder++'),
+                  MockupCard(title: 'Tinder++', index: 2),
                   SizedBox(height: 15),
-                  MockupCard(title: 'Facebook'),
+                  MockupCard(title: 'Facebook', index: 3),
                 ],
               ),
             ),

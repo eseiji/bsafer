@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MockupCard extends StatelessWidget {
-  const MockupCard({Key? key, required this.title}) : super(key: key);
+  const MockupCard({Key? key, required this.title, required this.index})
+      : super(key: key);
 
   final String title;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +14,35 @@ class MockupCard extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.fromLTRB(15, 10, 20, 10),
             height: 60,
             width: 100,
             decoration: BoxDecoration(
               color: const Color(0xff172026),
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(40),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.circular(100)),
-                  child: Text('1'),
+                  height: 50,
+                  width: 50,
+                  // padding: EdgeInsets.all(15),
+                  decoration: const BoxDecoration(
+                    color: Colors.blueAccent,
+                    shape: BoxShape.circle,
+                    // borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      '$index',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
                 // const Icon(
                 //   Icons.circle_rounded,

@@ -24,6 +24,7 @@ class ActivitiesBody extends StatelessWidget {
                     nExercises: 2,
                     description:
                         'Aplicação da técnica de leitura de mockup, contendo 2 exercícios',
+                    keyword: 'mockup-reading',
                   ),
                   const SizedBox(height: 15),
                   const HomeCard(
@@ -31,14 +32,15 @@ class ActivitiesBody extends StatelessWidget {
                     nExercises: 1,
                     description:
                         'Ambiente destinado a testes e estudos em geral',
+                    keyword: 'design-patterns',
                   ),
-                  const SizedBox(height: 15),
-                  const HomeCard(
-                    title: 'Design Patterns',
-                    nExercises: 1,
-                    description:
-                        'Ambiente destinado a testes e estudos em geral',
-                  ),
+                  // const SizedBox(height: 15),
+                  // const HomeCard(
+                  //   title: 'Design Patterns',
+                  //   nExercises: 1,
+                  //   description:
+                  //       'Ambiente destinado a testes e estudos em geral',
+                  // ),
                   // const SizedBox(height: 15),
                   // const HomeCard(
                   //   title: 'Design Patterns',

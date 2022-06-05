@@ -7,11 +7,13 @@ class HomeCard extends StatelessWidget {
     required this.title,
     required this.nExercises,
     required this.description,
+    required this.keyword,
   }) : super(key: key);
 
   final String title;
   final int nExercises;
   final String description;
+  final String keyword;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +123,7 @@ class HomeCard extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () =>
-                          Navigator.of(context).pushNamed('/mockup-reading'),
+                          Navigator.of(context).pushNamed('/$keyword'),
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(
                           EdgeInsets.zero,
