@@ -26,11 +26,15 @@ class _DesignPatternsBodyState extends State<DesignPatternsBody> {
               child: Column(
                 children: const [
                   SizedBox(height: 5),
-                  SharedCard(title: 'Gerador de CPFs', index: 1),
+                  SharedCard(
+                    index: 1,
+                    title: 'Gerador de CPFs',
+                    page: 'cpf-generator',
+                  ),
                   SizedBox(height: 15),
-                  SharedCard(title: 'Validador de CPFs', index: 2),
+                  SharedCard(index: 2, title: 'Validador de CPFs', page: ''),
                   SizedBox(height: 15),
-                  SharedCard(title: 'Alguma coisa', index: 3),
+                  SharedCard(index: 3, title: 'Alguma coisa', page: ''),
                 ],
               ),
             ),

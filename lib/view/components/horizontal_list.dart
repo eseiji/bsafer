@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HorizontalListView extends StatefulWidget {
-  const HorizontalListView({
+class HorizontalList extends StatefulWidget {
+  const HorizontalList({
     Key? key,
     required this.title,
   }) : super(key: key);
@@ -9,10 +9,10 @@ class HorizontalListView extends StatefulWidget {
   final String title;
 
   @override
-  _HorizontalListViewState createState() => _HorizontalListViewState();
+  _HorizontalListState createState() => _HorizontalListState();
 }
 
-class _HorizontalListViewState extends State<HorizontalListView> {
+class _HorizontalListState extends State<HorizontalList> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:bsafer/view/components/about_card.dart';
-import 'package:bsafer/view/components/horizontal_list_view.dart';
+import 'package:bsafer/view/components/horizontal_list.dart';
+import 'package:bsafer/view/components/progress_bar.dart';
 import 'package:flutter/material.dart';
 
 class AboutBody extends StatefulWidget {
@@ -38,7 +39,9 @@ class _AboutBodyState extends State<AboutBody> {
                     },
                   ),
                   SizedBox(height: 25),
-                  HorizontalListView(title: 'Tecnologias favoritas'),
+                  HorizontalList(title: 'Tecnologias favoritas'),
+                  SizedBox(height: 25),
+                  ProgressBar(),
                   // Row(
                   //   children: [
                   //     Expanded(

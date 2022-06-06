@@ -26,11 +26,11 @@ class _MockupReadingBodyState extends State<MockupReadingBody> {
               child: Column(
                 children: const [
                   SizedBox(height: 5),
-                  SharedCard(title: 'Money Page', index: 1),
+                  SharedCard(index: 1, title: 'Money Page', page: ''),
                   SizedBox(height: 15),
-                  SharedCard(title: 'Tinder++', index: 2),
+                  SharedCard(index: 1, title: 'Tinder++', page: ''),
                   SizedBox(height: 15),
-                  SharedCard(title: 'Facebook', index: 3),
+                  SharedCard(index: 3, title: 'Facebook', page: ''),
                 ],
               ),
             ),
