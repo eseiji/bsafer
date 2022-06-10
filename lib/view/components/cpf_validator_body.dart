@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class CPFValidatorBody extends StatefulWidget {
   const CPFValidatorBody({Key? key}) : super(key: key);
@@ -12,15 +15,24 @@ class _CPFValidatorBodyState extends State<CPFValidatorBody> {
   final _cpfTextFieldController = TextEditingController();
   bool _cpfValidity = false;
 
+  final cpfMaskFormatter = MaskTextInputFormatter(
+      mask: '###.###.###-##',
+      filter: {
+        "#": RegExp(r'\d'),
+      },
+      type: MaskAutoCompletionType.lazy);
+
   void validateCPF(String cpf) {
-    if (GetUtils.isCpf(cpf)) {
-      setState(() {
-        _cpfValidity = true;
-      });
-    } else {
-      setState(() {
-        _cpfValidity = false;
-      });
+    if (cpf.length == 14) {
+      if (GetUtils.isCpf(cpf)) {
+        setState(() {
+          _cpfValidity = true;
+        });
+      } else {
+        setState(() {
+          _cpfValidity = false;
+        });
+      }
     }
   }
 
@@ -61,8 +73,13 @@ class _CPFValidatorBodyState extends State<CPFValidatorBody> {
                     ),
                   ),
                   TextField(
+                    maxLength: 14,
                     controller: _cpfTextFieldController,
                     onChanged: validateCPF,
+                    inputFormatters: [
+                      cpfMaskFormatter
+                      // FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                    ],
                     keyboardType: TextInputType.number,
                     style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
