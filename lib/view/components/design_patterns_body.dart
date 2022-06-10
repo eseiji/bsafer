@@ -32,7 +32,11 @@ class _DesignPatternsBodyState extends State<DesignPatternsBody> {
                     page: 'cpf-generator',
                   ),
                   SizedBox(height: 15),
-                  SharedCard(index: 2, title: 'Validador de CPFs', page: ''),
+                  SharedCard(
+                    index: 2,
+                    title: 'Validador de CPFs',
+                    page: 'cpf-validator',
+                  ),
                   SizedBox(height: 15),
                   SharedCard(index: 3, title: 'Alguma coisa', page: ''),
                 ],

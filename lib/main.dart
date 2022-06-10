@@ -1,4 +1,5 @@
 import 'package:bsafer/view/cpf_generator.view.dart';
+import 'package:bsafer/view/cpf_validator.view.dart';
 import 'package:bsafer/view/design_patterns.view.dart';
 import 'package:bsafer/view/home.view.dart';
 import 'package:bsafer/view/mockup_reading.view.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/mockup-reading': (context) => const MockupReadingView(),
         '/design-patterns': (context) => const DesignPatternsView(),
         '/cpf-generator': (context) => const CPFGeneratorView(),
+        '/cpf-validator': (context) => const CPFValidatorView(),
       },
     );
   }

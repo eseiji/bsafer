@@ -7,15 +7,21 @@ class RepositoriesCard extends StatelessWidget {
   }) : super(key: key);
 
   final Map<String, dynamic> repository;
-  // final List<dynamic> repository;
 
   @override
   Widget build(BuildContext context) {
+    final String date = repository["updated_at"];
+    final result = date.substring(0, 10);
+    final year = result.substring(0, 4);
+    final month = result.substring(5, 7);
+    final day = result.substring(8);
+    final dateFmt = '$day/$month/$year';
+
     return Row(
       children: [
         Expanded(
           child: Container(
-            height: 200,
+            height: 80,
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: const Color(0xff172026),
@@ -28,49 +34,32 @@ class RepositoriesCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
                       children: [
+                        Icon(Icons.source,
+                            color: Colors.white.withOpacity(0.7)),
+                        const SizedBox(width: 10),
                         Text(
                           repository["name"],
                           style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                        Text(
-                          repository["full_name"],
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.7),
-                            fontSize: 13,
+                            fontSize: 17,
                           ),
                         ),
                       ],
                     ),
-                    Text(
-                      repository["language"] ?? '',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
                     RichText(
+                      textAlign: TextAlign.end,
                       text: TextSpan(
-                        text: 'Última atualização:\n',
+                        text: 'Atualizado em:\n',
                         style: TextStyle(
                           color: Colors.white.withOpacity(0.7),
                           fontSize: 13,
                         ),
                         children: [
                           TextSpan(
-                            text: repository["name"],
+                            text: dateFmt,
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -80,6 +69,48 @@ class RepositoriesCard extends StatelessWidget {
                         ],
                       ),
                     ),
+                    // Text(
+                    //   repository["language"] ?? '',
+                    //   style: const TextStyle(
+                    //     color: Colors.white,
+                    //     fontWeight: FontWeight.bold,
+                    //     fontSize: 13,
+                    //   ),
+                    // ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(Icons.code, color: Colors.white.withOpacity(0.7)),
+                    const SizedBox(width: 10),
+                    Text(
+                      repository["language"] ?? '',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
+                    ),
+                    // RichText(
+                    //   text: TextSpan(
+                    //     text: 'Última atualização:\n',
+                    //     style: TextStyle(
+                    //       color: Colors.white.withOpacity(0.7),
+                    //       fontSize: 13,
+                    //     ),
+                    //     children: [
+                    //       TextSpan(
+                    //         text: repository["name"],
+                    //         style: const TextStyle(
+                    //           color: Colors.white,
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 13,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                     // Text(
                     //   'Última atualização:\n12/10/2022',
                     //   style: TextStyle(

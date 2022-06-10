@@ -35,14 +35,29 @@ class _RepositoriesBodyState extends State<RepositoriesBody> {
                 ? const Center(
                     child: CircularProgressIndicator(),
                   )
-                : GridView.builder(
+                :
+                // GridView.builder(
+                //     itemCount: _userRepositories.length,
+                //     gridDelegate:
+                //         const SliverGridDelegateWithFixedCrossAxisCount(
+                //       crossAxisCount: 2,
+                //       mainAxisSpacing: 15,
+                //       crossAxisSpacing: 15,
+                //     ),
+                //     itemBuilder: (BuildContext context, int index) {
+                //       return RepositoriesCard(
+                //         repository: _userRepositories[index],
+                //       );
+                //       // Text(
+                //       //   _userRepositories[index]["name"],
+                //       //   style: const TextStyle(
+                //       //     color: Colors.white,
+                //       //   ),
+                //       // );
+                //     },
+                //   ),
+                ListView.separated(
                     itemCount: _userRepositories.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 15,
-                      crossAxisSpacing: 15,
-                    ),
                     itemBuilder: (BuildContext context, int index) {
                       return RepositoriesCard(
                         repository: _userRepositories[index],
@@ -54,21 +69,9 @@ class _RepositoriesBodyState extends State<RepositoriesBody> {
                       //   ),
                       // );
                     },
+                    separatorBuilder: (BuildContext context, int index) =>
+                        Divider(),
                   ),
-            // ListView.separated(
-            //     itemCount: _userRepositories.length,
-            //     itemBuilder: (BuildContext context, int index) {
-            //       return RepositoriesCard();
-            //       // Text(
-            //       //   _userRepositories[index]["name"],
-            //       //   style: const TextStyle(
-            //       //     color: Colors.white,
-            //       //   ),
-            //       // );
-            //     },
-            //     separatorBuilder: (BuildContext context, int index) =>
-            //         Divider(),
-            //   ),
           ),
         ),
       ],
