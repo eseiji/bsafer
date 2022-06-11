@@ -1,4 +1,3 @@
-import 'package:bsafer/view/components/app_bar.dart';
 import 'package:bsafer/view/components/tinder_body.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,11 @@ class _TinderViewState extends State<TinderView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar('Tinder'),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: const TinderBody(),
     );
   }

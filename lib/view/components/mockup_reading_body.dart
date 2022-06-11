@@ -26,7 +26,7 @@ class _MockupReadingBodyState extends State<MockupReadingBody> {
               child: Column(
                 children: const [
                   SizedBox(height: 5),
-                  SharedCard(index: 1, title: 'Money Page', page: ''),
+                  SharedCard(index: 1, title: 'Money Page', page: 'money-page'),
                   SizedBox(height: 15),
                   SharedCard(index: 1, title: 'Tinder++', page: 'tinder'),
                   SizedBox(height: 15),

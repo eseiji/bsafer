@@ -26,84 +26,126 @@ class _TinderBodyState extends State<TinderBody> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Center(
-                    child: Image(
-                      image: AssetImage('assets/images/tinder.png'),
+                  const Image(
+                    width: 250,
+                    image: AssetImage('assets/images/tinder.png'),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+                    child: Text(
+                      'By tapping Create Account or Sign in, you agree to our Terms.\nLearn how we process your data in our Privacy Policy and Cookies Policy.',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(15.0),
                     height: 60,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Icon(
-                          Icons.apple,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          'Sign in with Apple',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: const [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Icon(
+                                Icons.apple,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Sign in with Apple',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 15),
                   Container(
-                    padding: EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(15.0),
                     height: 60,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Icon(
-                          Icons.apple,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          'Sign in with Apple',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: const [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Icon(
+                                Icons.apple,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Sign in with Facebook',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 15),
                   Container(
-                    padding: EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(15.0),
                     height: 60,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Icon(
-                          Icons.apple,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          'Sign in with Apple',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: const [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Icon(
+                                Icons.apple,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Sign in with Phone Number',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

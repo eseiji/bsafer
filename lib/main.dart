@@ -3,6 +3,7 @@ import 'package:bsafer/view/cpf_validator.view.dart';
 import 'package:bsafer/view/design_patterns.view.dart';
 import 'package:bsafer/view/home.view.dart';
 import 'package:bsafer/view/mockup_reading.view.dart';
+import 'package:bsafer/view/money_page.view.dart';
 import 'package:bsafer/view/repositories.view.dart';
 import 'package:bsafer/view/tinder.view.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/cpf-generator': (context) => const CPFGeneratorView(),
         '/cpf-validator': (context) => const CPFValidatorView(),
         '/tinder': (context) => const TinderView(),
+        '/money-page': (context) => const MoneyPageView(),
       },
     );
   }
