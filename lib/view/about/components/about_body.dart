@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/about_card.dart';
+import 'package:bsafer/view/about/components/about_card.dart';
 import 'package:bsafer/view/components/horizontal_list.dart';
 import 'package:bsafer/view/components/progress_bar.dart';
 import 'package:flutter/material.dart';
@@ -42,27 +42,6 @@ class _AboutBodyState extends State<AboutBody> {
                   HorizontalList(title: 'Tecnologias favoritas'),
                   SizedBox(height: 25),
                   ProgressBar(),
-                  // Row(
-                  //   children: [
-                  //     Expanded(
-                  //       child: Container(
-                  //         height: 100,
-                  //         width: 100,
-                  //         decoration: BoxDecoration(
-                  //           color: const Color(0xff172026),
-                  //           borderRadius: BorderRadius.circular(15),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
-                  // Container(
-                  //   height: 100,
-                  //   width: 100,
-                  //   decoration: const BoxDecoration(
-                  //     color: Color(0xff172026),
-                  //   ),
-                  // )
                 ],
               ),
             ),

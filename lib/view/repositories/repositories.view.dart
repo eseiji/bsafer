@@ -1,5 +1,5 @@
 import 'package:bsafer/view/components/app_bar.dart';
-import 'package:bsafer/view/components/repositories_body.dart';
+import 'package:bsafer/view/repositories/components/repositories_body.dart';
 import 'package:flutter/material.dart';
 
 class RepositoriesView extends StatefulWidget {

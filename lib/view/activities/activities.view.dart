@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/activities_body.dart';
+import 'package:bsafer/view/activities/components/activities_body.dart';
 import 'package:bsafer/view/components/app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,6 @@ class _ActivitiesViewState extends State<ActivitiesView> {
     return Scaffold(
       appBar: appBar('Atividades'),
       body: const ActivitiesBody(),
-      // bottomNavigationBar: Container(),
     );
   }
 }

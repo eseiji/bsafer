@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/about_body.dart';
+import 'package:bsafer/view/about/components/about_body.dart';
 import 'package:bsafer/view/components/app_bar.dart';
 import 'package:flutter/material.dart';
 

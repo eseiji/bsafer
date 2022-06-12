@@ -1,4 +1,4 @@
-import 'package:bsafer/view/repositories.view.dart';
+import 'package:bsafer/view/repositories/repositories.view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -10,18 +10,6 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
-
-  void _onItemSelected(int index) {
-    // print(index);
-    setState(() {
-      _selectedIndex = index;
-    });
-    if (index == 1) {
-      Navigator.of(context).pushNamed('/repositories');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
@@ -42,7 +30,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ],
       ),
       tabBuilder: (context, index) {
-        print(index);
         switch (index) {
           case 0:
             return CupertinoTabView(
@@ -80,40 +67,4 @@ class _BottomNavBarState extends State<BottomNavBar> {
       },
     );
   }
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     decoration: const BoxDecoration(
-  //       color: Color(0xff121517),
-  //     ),
-  //     child: BottomNavigationBar(
-  //       onTap: _onItemSelected,
-  //       currentIndex: _selectedIndex,
-  //       backgroundColor: Colors.transparent,
-  //       selectedItemColor: Colors.blueAccent,
-  //       unselectedItemColor: Colors.white,
-  //       selectedLabelStyle: const TextStyle(
-  //         color: Colors.blueAccent,
-  //         fontWeight: FontWeight.bold,
-  //       ),
-  //       unselectedLabelStyle: const TextStyle(
-  //         color: Colors.white,
-  //         fontWeight: FontWeight.normal,
-  //       ),
-  //       items: const [
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.receipt_long_rounded),
-  //           label: 'Atividades',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.badge_rounded),
-  //           label: 'Repositórios',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.person),
-  //           label: 'Sobre o dev',
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 }

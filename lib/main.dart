@@ -1,12 +1,13 @@
-import 'package:bsafer/view/cep_finder.view.dart';
-import 'package:bsafer/view/cpf_generator.view.dart';
-import 'package:bsafer/view/cpf_validator.view.dart';
-import 'package:bsafer/view/design_patterns.view.dart';
-import 'package:bsafer/view/home.view.dart';
-import 'package:bsafer/view/mockup_reading.view.dart';
-import 'package:bsafer/view/money_page.view.dart';
-import 'package:bsafer/view/repositories.view.dart';
-import 'package:bsafer/view/tinder.view.dart';
+import 'package:bsafer/view/cep_finder/cep_finder.view.dart';
+import 'package:bsafer/view/cpf_generator/cpf_generator.view.dart';
+import 'package:bsafer/view/cpf_validator/cpf_validator.view.dart';
+import 'package:bsafer/view/design_patterns/design_patterns.view.dart';
+import 'package:bsafer/view/facebook_login/facebook_login.view.dart';
+import 'package:bsafer/view/home/home.view.dart';
+import 'package:bsafer/view/mockup_reading/mockup_reading.view.dart';
+import 'package:bsafer/view/money_page/money_page.view.dart';
+import 'package:bsafer/view/repositories/repositories.view.dart';
+import 'package:bsafer/view/tinder/tinder.view.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -34,9 +35,10 @@ class MyApp extends StatelessWidget {
         '/design-patterns': (context) => const DesignPatternsView(),
         '/cpf-generator': (context) => const CPFGeneratorView(),
         '/cpf-validator': (context) => const CPFValidatorView(),
-        '/tinder': (context) => const TinderView(),
-        '/money-page': (context) => const MoneyPageView(),
         '/cep-finder': (context) => const CEPFinderView(),
+        '/money-page': (context) => const MoneyPageView(),
+        '/tinder': (context) => const TinderView(),
+        '/facebook-login': (context) => const FacebookLoginView(),
       },
     );
   }

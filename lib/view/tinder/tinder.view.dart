@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/tinder_body.dart';
+import 'package:bsafer/view/tinder/components/tinder_body.dart';
 import 'package:flutter/material.dart';
 
 class TinderView extends StatefulWidget {

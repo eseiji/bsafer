@@ -1,5 +1,5 @@
 import 'package:bsafer/view/components/app_bar.dart';
-import 'package:bsafer/view/components/design_patterns_body.dart';
+import 'package:bsafer/view/design_patterns/components/design_patterns_body.dart';
 import 'package:flutter/material.dart';
 
 class DesignPatternsView extends StatefulWidget {

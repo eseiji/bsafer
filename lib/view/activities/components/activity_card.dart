@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeCard extends StatelessWidget {
-  const HomeCard({
+class ActivityCard extends StatelessWidget {
+  const ActivityCard({
     Key? key,
     required this.title,
     required this.nExercises,
@@ -27,7 +27,7 @@ class HomeCard extends StatelessWidget {
             width: 100,
             decoration: BoxDecoration(
               // color: Colors.white,
-              color: Color(0xff172026),
+              color: const Color(0xff172026),
               borderRadius: BorderRadius.circular(15),
             ),
             child: Column(
@@ -38,9 +38,17 @@ class HomeCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Icon(
-                          Icons.circle_rounded,
-                          color: Colors.blueAccent,
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: const BoxDecoration(
+                            color: Colors.blueAccent,
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/images/toys.svg',
+                            color: Colors.black,
+                            height: 25.0,
+                          ),
                         ),
                         const SizedBox(width: 10),
                         Text(
@@ -54,7 +62,6 @@ class HomeCard extends StatelessWidget {
                       ],
                     ),
                     RichText(
-                      // textAlign: TextAlign.center,
                       text: TextSpan(
                         text: 'Exercícios:  ',
                         style: TextStyle(
@@ -102,13 +109,14 @@ class HomeCard extends StatelessWidget {
                             ),
                           ),
                           child: Row(
-                            children: const [
-                              Icon(
-                                Icons.circle_notifications_rounded,
+                            children: [
+                              SvgPicture.asset(
+                                'assets/images/github.svg',
                                 color: Colors.white,
+                                height: 23.0,
                               ),
-                              SizedBox(width: 10),
-                              Text(
+                              const SizedBox(width: 10),
+                              const Text(
                                 'Acessar código fonte',
                                 style: TextStyle(
                                   fontSize: 15,
@@ -153,11 +161,5 @@ class HomeCard extends StatelessWidget {
         ),
       ],
     );
-    // Container(
-    //   color: Color(0xFF172026),
-    //   height: 100,
-    //   width: 100,
-    //   child: ,
-    // );
   }
 }

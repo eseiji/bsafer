@@ -1,5 +1,5 @@
 import 'package:bsafer/view/components/app_bar.dart';
-import 'package:bsafer/view/components/cpf_generator_body.dart';
+import 'package:bsafer/view/cpf_generator/components/cpf_generator_body.dart';
 import 'package:flutter/material.dart';
 
 class CPFGeneratorView extends StatefulWidget {

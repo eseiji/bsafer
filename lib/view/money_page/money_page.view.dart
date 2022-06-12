@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/money_page_body.dart';
+import 'package:bsafer/view/money_page/components/money_page_body.dart';
 import 'package:flutter/material.dart';
 
 class MoneyPageView extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:bsafer/view/components/app_bar.dart';
-import 'package:bsafer/view/components/cpf_validator_body.dart';
+import 'package:bsafer/view/cpf_validator/components/cpf_validator_body.dart';
 import 'package:flutter/material.dart';
 
 class CPFValidatorView extends StatefulWidget {

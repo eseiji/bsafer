@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/home_card.dart';
+import 'package:bsafer/view/activities/components/activity_card.dart';
 import 'package:flutter/material.dart';
 
 class ActivitiesBody extends StatelessWidget {
@@ -17,45 +17,23 @@ class ActivitiesBody extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 5),
-                  const HomeCard(
+                children: const [
+                  SizedBox(height: 5),
+                  ActivityCard(
                     title: 'Leitura de mockup',
                     nExercises: 2,
                     description:
                         'Aplicação da técnica de leitura de mockup, contendo 2 exercícios',
                     keyword: 'mockup-reading',
                   ),
-                  const SizedBox(height: 15),
-                  const HomeCard(
+                  SizedBox(height: 15),
+                  ActivityCard(
                     title: 'Design Patterns',
                     nExercises: 1,
                     description:
                         'Ambiente destinado a testes e estudos em geral',
                     keyword: 'design-patterns',
                   ),
-                  // const SizedBox(height: 15),
-                  // const HomeCard(
-                  //   title: 'Design Patterns',
-                  //   nExercises: 1,
-                  //   description:
-                  //       'Ambiente destinado a testes e estudos em geral',
-                  // ),
-                  // const SizedBox(height: 15),
-                  // const HomeCard(
-                  //   title: 'Design Patterns',
-                  //   nExercises: 1,
-                  //   description: 'Ambiente destinado a testes e estudos em geral',
-                  // ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(color: Colors.blue),
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),

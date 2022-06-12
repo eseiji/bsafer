@@ -30,7 +30,11 @@ class _MockupReadingBodyState extends State<MockupReadingBody> {
                   SizedBox(height: 15),
                   SharedCard(index: 2, title: 'Tinder++', page: 'tinder'),
                   SizedBox(height: 15),
-                  SharedCard(index: 3, title: 'Facebook', page: ''),
+                  SharedCard(
+                    index: 3,
+                    title: 'Facebook',
+                    page: 'facebook-login',
+                  ),
                 ],
               ),
             ),

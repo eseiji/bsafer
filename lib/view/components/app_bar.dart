@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 AppBar appBar(String title) {
   return AppBar(
     backgroundColor: const Color(0xff121517),
-    // backgroundColor: Colors.transparent,
     automaticallyImplyLeading: true,
     elevation: 3,
     title: Column(

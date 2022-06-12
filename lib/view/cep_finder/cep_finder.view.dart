@@ -1,5 +1,5 @@
+import 'package:bsafer/view/cep_finder/components/cep_finder_body.dart';
 import 'package:bsafer/view/components/app_bar.dart';
-import 'package:bsafer/view/components/cep_finder_body.dart';
 import 'package:flutter/material.dart';
 
 class CEPFinderView extends StatelessWidget {

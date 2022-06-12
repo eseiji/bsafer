@@ -1,9 +1,8 @@
-import 'package:bsafer/view/about.view.dart';
-import 'package:bsafer/view/activities.view.dart';
-import 'package:bsafer/view/repositories.view.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:bsafer/view/about/about.view.dart';
+import 'package:bsafer/view/activities/activities.view.dart';
+import 'package:bsafer/view/repositories/repositories.view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -16,16 +15,6 @@ class _HomeViewState extends State<HomeView> {
   int _currentPage = 0;
   late PageController _pageController;
 
-  // void _onItemSelected(int index) {
-  //   // print(index);
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  //   if (index == 1) {
-  //     Navigator.of(context).pushNamed('/repositories');
-  //   }
-  // }
-
   @override
   void initState() {
     super.initState();
@@ -35,6 +24,7 @@ class _HomeViewState extends State<HomeView> {
   _setCurrentPage(page) {
     setState(() {
       _currentPage = page;
+      print(page);
     });
   }
 
@@ -74,17 +64,29 @@ class _HomeViewState extends State<HomeView> {
             color: Colors.white,
             fontWeight: FontWeight.normal,
           ),
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.receipt_long_rounded),
+              icon: SvgPicture.asset(
+                'assets/images/target.svg',
+                color: _currentPage == 0 ? Colors.blueAccent : Colors.white,
+                height: 25.0,
+              ),
               label: 'Atividades',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.badge_rounded),
+              icon: SvgPicture.asset(
+                'assets/images/github.svg',
+                color: _currentPage == 1 ? Colors.blueAccent : Colors.white,
+                height: 25.0,
+              ),
               label: 'Repositórios',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: SvgPicture.asset(
+                'assets/images/person.svg',
+                color: _currentPage == 2 ? Colors.blueAccent : Colors.white,
+                height: 25.0,
+              ),
               label: 'Sobre o dev',
             ),
           ],

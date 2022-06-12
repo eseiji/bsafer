@@ -1,4 +1,4 @@
-import 'package:bsafer/view/components/repositories_card.dart';
+import 'package:bsafer/view/repositories/components/repositories_card.dart';
 import 'package:flutter/material.dart';
 import 'package:bsafer/services/api_github.dart';
 
@@ -35,42 +35,15 @@ class _RepositoriesBodyState extends State<RepositoriesBody> {
                 ? const Center(
                     child: CircularProgressIndicator(),
                   )
-                :
-                // GridView.builder(
-                //     itemCount: _userRepositories.length,
-                //     gridDelegate:
-                //         const SliverGridDelegateWithFixedCrossAxisCount(
-                //       crossAxisCount: 2,
-                //       mainAxisSpacing: 15,
-                //       crossAxisSpacing: 15,
-                //     ),
-                //     itemBuilder: (BuildContext context, int index) {
-                //       return RepositoriesCard(
-                //         repository: _userRepositories[index],
-                //       );
-                //       // Text(
-                //       //   _userRepositories[index]["name"],
-                //       //   style: const TextStyle(
-                //       //     color: Colors.white,
-                //       //   ),
-                //       // );
-                //     },
-                //   ),
-                ListView.separated(
+                : ListView.separated(
                     itemCount: _userRepositories.length,
                     itemBuilder: (BuildContext context, int index) {
                       return RepositoriesCard(
                         repository: _userRepositories[index],
                       );
-                      // Text(
-                      //   _userRepositories[index]["name"],
-                      //   style: const TextStyle(
-                      //     color: Colors.white,
-                      //   ),
-                      // );
                     },
                     separatorBuilder: (BuildContext context, int index) =>
-                        Divider(),
+                        const Divider(),
                   ),
           ),
         ),
@@ -78,8 +51,3 @@ class _RepositoriesBodyState extends State<RepositoriesBody> {
     );
   }
 }
-
-// language
-// created_at
-// updated_at
-// ssh_url
