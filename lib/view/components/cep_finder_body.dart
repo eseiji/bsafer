@@ -36,6 +36,10 @@ class _CEPFinderBodyState extends State<CEPFinderBody> {
       setState(() {
         validCEP = true;
         _cepInfo = response;
+        if (_cepInfo["localidade"].isNotEmpty && _cepInfo["uf"].isNotEmpty) {
+          _cepInfo["localidade"] =
+              '${_cepInfo["localidade"]}-${_cepInfo["uf"]}';
+        }
       });
     }
   }
@@ -95,12 +99,25 @@ class _CEPFinderBodyState extends State<CEPFinderBody> {
                 const SizedBox(height: 15),
                 validCEP
                     ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Container(
-                            padding: const EdgeInsets.all(15),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF252A34),
-                              borderRadius: BorderRadius.circular(10),
+                          InputDecorator(
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: const Color(0xFF252A34),
+                              labelText: 'Rua',
+                              labelStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.white.withOpacity(0.2),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
                             ),
                             child: Text(
                               _cepInfo["logradouro"],
@@ -110,29 +127,52 @@ class _CEPFinderBodyState extends State<CEPFinderBody> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 20),
                           _cepInfo.containsValue('complemento')
-                              ? Container(
-                                  padding: const EdgeInsets.all(15),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF252A34),
-                                    borderRadius: BorderRadius.circular(10),
+                              ? InputDecorator(
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: const Color(0xFF252A34),
+                                    labelText: 'Complemento',
+                                    labelStyle: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.white.withOpacity(0.2),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
                                   ),
                                   child: Text(
                                     _cepInfo["complemento"],
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
                                     ),
                                   ),
                                 )
                               : const SizedBox(height: 0, width: 0),
-                          Container(
-                            padding: const EdgeInsets.all(15),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF252A34),
-                              borderRadius: BorderRadius.circular(10),
+                          InputDecorator(
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: const Color(0xFF252A34),
+                              labelText: 'Bairro',
+                              labelStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.white.withOpacity(0.2),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
                             ),
                             child: Text(
                               _cepInfo["bairro"],
@@ -142,36 +182,30 @@ class _CEPFinderBodyState extends State<CEPFinderBody> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 15),
-                          Container(
-                            padding: const EdgeInsets.all(15),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF252A34),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: RichText(
-                              text: TextSpan(
-                                text: _cepInfo["localidade"],
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
+                          const SizedBox(height: 20),
+                          InputDecorator(
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: const Color(0xFF252A34),
+                              labelText: 'Localidade',
+                              labelStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.white.withOpacity(0.2),
+                                  width: 1.0,
                                 ),
-                                children: [
-                                  const TextSpan(
-                                    text: '-',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: _cepInfo["uf"],
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ],
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            child: Text(
+                              _cepInfo["localidade"],
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
                               ),
                             ),
                           ),

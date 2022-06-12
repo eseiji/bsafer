@@ -69,14 +69,6 @@ class RepositoriesCard extends StatelessWidget {
                         ],
                       ),
                     ),
-                    // Text(
-                    //   repository["language"] ?? '',
-                    //   style: const TextStyle(
-                    //     color: Colors.white,
-                    //     fontWeight: FontWeight.bold,
-                    //     fontSize: 13,
-                    //   ),
-                    // ),
                   ],
                 ),
                 Row(
@@ -92,31 +84,6 @@ class RepositoriesCard extends StatelessWidget {
                         fontSize: 13,
                       ),
                     ),
-                    // RichText(
-                    //   text: TextSpan(
-                    //     text: 'Última atualização:\n',
-                    //     style: TextStyle(
-                    //       color: Colors.white.withOpacity(0.7),
-                    //       fontSize: 13,
-                    //     ),
-                    //     children: [
-                    //       TextSpan(
-                    //         text: repository["name"],
-                    //         style: const TextStyle(
-                    //           color: Colors.white,
-                    //           fontWeight: FontWeight.bold,
-                    //           fontSize: 13,
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
-                    // Text(
-                    //   'Última atualização:\n12/10/2022',
-                    //   style: TextStyle(
-                    //     color: Colors.white.withOpacity(0.7),
-                    //   ),
-                    // ),
                   ],
                 ),
               ],
