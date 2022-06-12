@@ -16,11 +16,12 @@ class _CPFValidatorBodyState extends State<CPFValidatorBody> {
   bool _cpfValidity = false;
 
   final cpfMaskFormatter = MaskTextInputFormatter(
-      mask: '###.###.###-##',
-      filter: {
-        "#": RegExp(r'\d'),
-      },
-      type: MaskAutoCompletionType.lazy);
+    mask: '###.###.###-##',
+    filter: {
+      "#": RegExp(r'\d'),
+    },
+    type: MaskAutoCompletionType.lazy,
+  );
 
   void validateCPF(String cpf) {
     if (cpf.length == 14) {

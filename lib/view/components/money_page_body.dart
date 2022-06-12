@@ -44,7 +44,6 @@ class MoneyPageBody extends StatelessWidget {
                     height: 60,
                     decoration: BoxDecoration(
                       color: Colors.orange,
-                      // border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(

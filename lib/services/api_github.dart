@@ -10,7 +10,7 @@ class ApiGithubService {
       var jsonResponse = await convert.jsonDecode(response.body);
       return jsonResponse;
     } else {
-      throw Exception('Erro: ${response.body}');
+      throw Exception('Error status code: ${response.statusCode}');
     }
   }
 
