@@ -39,7 +39,7 @@ class _RepositoriesBodyState extends State<RepositoriesBody> {
                 builder: (context, snapshot) {
                   if (snapshot.hasError) {
                     final error = snapshot.error;
-                    return Text('$error');
+                    return Center(child: Text('$error'));
                   } else if (snapshot.hasData) {
                     final List<dynamic> repo = snapshot.data as List<dynamic>;
                     return ListView.separated(
