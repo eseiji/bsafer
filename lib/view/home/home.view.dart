@@ -24,7 +24,6 @@ class _HomeViewState extends State<HomeView> {
   _setCurrentPage(page) {
     setState(() {
       _currentPage = page;
-      print(page);
     });
   }
 

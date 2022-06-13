@@ -10,7 +10,7 @@ class RepositoriesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String date = repository["updated_at"];
+    final String date = repository["pushed_at"];
     final result = date.substring(0, 10);
     final year = result.substring(0, 4);
     final month = result.substring(5, 7);
