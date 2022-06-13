@@ -29,35 +29,36 @@ class _RepositoriesBodyState extends State<RepositoriesBody> {
       children: [
         Expanded(
           child: Container(
-              padding: const EdgeInsets.all(10.0),
-              decoration: const BoxDecoration(
-                color: Color(0xff121517),
-              ),
-              child: Center(
-                child: FutureBuilder(
-                    future: _userRepositories,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        final error = snapshot.error;
-                        return Text('$error');
-                      } else if (snapshot.hasData) {
-                        final List<dynamic> repo =
-                            snapshot.data as List<dynamic>;
-                        return ListView.separated(
-                          itemCount: repo.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return RepositoriesCard(
-                              repository: repo[index],
-                            );
-                          },
-                          separatorBuilder: (BuildContext context, int index) =>
-                              const Divider(),
+            padding: const EdgeInsets.all(10.0),
+            decoration: const BoxDecoration(
+              color: Color(0xff121517),
+            ),
+            child: Center(
+              child: FutureBuilder(
+                future: _userRepositories,
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    final error = snapshot.error;
+                    return Text('$error');
+                  } else if (snapshot.hasData) {
+                    final List<dynamic> repo = snapshot.data as List<dynamic>;
+                    return ListView.separated(
+                      itemCount: repo.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return RepositoriesCard(
+                          repository: repo[index],
                         );
-                      } else {
-                        return const Center(child: CircularProgressIndicator());
-                      }
-                    }),
-              )),
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          const Divider(),
+                    );
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
+            ),
+          ),
         ),
       ],
     );
