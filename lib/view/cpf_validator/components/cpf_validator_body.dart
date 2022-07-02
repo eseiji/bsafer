@@ -34,6 +34,10 @@ class _CPFValidatorBodyState extends State<CPFValidatorBody> {
           _cpfValidity = false;
         });
       }
+    } else {
+      setState(() {
+        _cpfValidity = false;
+      });
     }
   }
 
